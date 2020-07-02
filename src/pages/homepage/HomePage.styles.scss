@@ -5,3 +5,9 @@
     padding: 20px 80px;
 
 }
+
+@media screen and (max-width: 850px) {
+    .homepage {
+        padding: 0;
+    }
+ }

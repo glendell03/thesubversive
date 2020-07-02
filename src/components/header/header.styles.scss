@@ -1,5 +1,6 @@
 .header {
     height: 70px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
@@ -7,14 +8,10 @@
 
     .logo-container {
         height: 100%;
+        width: 15rem;
         display: flex;
         align-items: center;
         
-    }
-
-    .logo {
-        width: 40%;
-     
     }
 
     .nav-links {
@@ -22,11 +19,12 @@
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     .links {
         padding: 10px 15px;
+        cursor: pointer;
     }
 
 }
