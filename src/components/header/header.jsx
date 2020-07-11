@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import {
   SearchOutlined,
@@ -12,7 +13,6 @@ import { Squash as Hamburger } from "hamburger-react";
 import "./header.styles.scss";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
-import { auth } from "../../firebase/firebase.utils";
 import NavLinks from "./nav-links";
 
 const Header = ({ currentUser }) => {
@@ -29,10 +29,7 @@ const Header = ({ currentUser }) => {
             toggle={setMenuActive}
           />
         </div>
-        <div
-          className="isClicked"
-          onClick={() => setMenuActive(false)}
-        >
+        <div className="isClicked" onClick={() => setMenuActive(false)}>
           <Link className="logo-container" to="/">
             <Logo className="logo" />
           </Link>
@@ -40,15 +37,14 @@ const Header = ({ currentUser }) => {
           <div className="btn-links-container" id="btn-links-container">
             <SearchOutlined className="btn-links" id="btn-links" />
             {currentUser ? (
-              <div onClick={() => auth.signOut()}>
-                <UserDeleteOutlined className="btn-links" id="btn-links" />
-              </div>
+              <UserDeleteOutlined className="btn-links" id="btn-links" />
             ) : (
-              <Link to="/signin">
+              <Link to="/account">
                 <UserOutlined className="btn-links" id="btn-links" />
               </Link>
             )}
             <ShoppingOutlined className="btn-links" id="btn-links" />
+
           </div>
         </div>
       </div>
@@ -56,4 +52,8 @@ const Header = ({ currentUser }) => {
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Header);

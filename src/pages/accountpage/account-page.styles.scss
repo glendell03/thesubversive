@@ -1,0 +1,23 @@
+.account-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .profile {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color:#cccc;
+    .photo-url {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      font-size: 70px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

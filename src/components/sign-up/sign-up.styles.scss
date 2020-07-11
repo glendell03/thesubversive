@@ -1,10 +1,33 @@
-.sign-up {
+.sign-up-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  
+  .sign-in-link {
+      padding: 10px 0 0;
+  }
+  .sign-up-side {
+    height: 550px;
+    margin: 50px;
+    margin-right: 0;
+  }
+  .sign-up {
     display: flex;
     flex-direction: column;
     width: 380px;
 
     .title {
-        margin: 10px 0;
-        
+      margin: 10px 0;
     }
+  }
 }
+
+@media screen and (max-width: 1000px) {
+    .sign-up{
+        padding: 0 10px;
+    }
+    .sign-up-side {
+      display: none;
+    }
+  }
