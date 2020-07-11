@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 import {
   SearchOutlined,
-  ShoppingOutlined,
   UserOutlined,
   UserDeleteOutlined,
 } from "@ant-design/icons";
@@ -14,8 +13,10 @@ import "./header.styles.scss";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 import NavLinks from "./nav-links";
+import CartIcon from "../cart-icon/cart-icon";
+import CartDropdown from "../cart-dropdown/cart-dropdown";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, hidden }) => {
   const [menuActive, setMenuActive] = useState(false);
 
   return (
@@ -43,17 +44,20 @@ const Header = ({ currentUser }) => {
                 <UserOutlined className="btn-links" id="btn-links" />
               </Link>
             )}
-            <ShoppingOutlined className="btn-links" id="btn-links" />
-
+            <CartIcon />
           </div>
         </div>
       </div>
+      {
+        hidden ? null : <CartDropdown  />
+      }
     </nav>
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
 
 export default connect(mapStateToProps)(Header);
