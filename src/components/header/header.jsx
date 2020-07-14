@@ -38,7 +38,9 @@ const Header = ({ currentUser, hidden }) => {
           <div className="btn-links-container" id="btn-links-container">
             <SearchOutlined className="btn-links" id="btn-links" />
             {currentUser ? (
-              <UserDeleteOutlined className="btn-links" id="btn-links" />
+              <Link to="/account">
+                <UserDeleteOutlined className="btn-links" id="btn-links" />
+              </Link>
             ) : (
               <Link to="/account">
                 <UserOutlined className="btn-links" id="btn-links" />
@@ -48,9 +50,7 @@ const Header = ({ currentUser, hidden }) => {
           </div>
         </div>
       </div>
-      {
-        hidden ? null : <CartDropdown  />
-      }
+      {hidden ? null : <CartDropdown />}
     </nav>
   );
 };

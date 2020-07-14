@@ -52,15 +52,14 @@ nav {
     .burger-menu {
       display: none;
     }
-
-    
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   #burger-menu {
     display: flex;
     z-index: 100;
+    z-index: 999;
   }
 
   #nav-links {
@@ -73,6 +72,8 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 0;
+    width: 100%;
+    z-index: 998;
   }
 
   #btn-links {

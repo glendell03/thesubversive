@@ -34,14 +34,12 @@ class Directory extends React.Component {
           title: "womens",
           imageUrl:
             "https://www.boardsportsource.com/wp-content/uploads/2018/07/Nikita.jpg",
-          size: "large",
           id: 4,
           linkUrl: 'womens'
         },
         {
           title: "mens",
           imageUrl: "https://i.dmarge.com/2019/06/cool-grey-hoodie-920x556.jpg",
-          size: "large",
           id: 5,
           linkUrl: 'mens'
         },
